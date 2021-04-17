@@ -1,0 +1,17 @@
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 0.75rem;
+}
+
+.searchInput {
+  width: 320px;
+  margin-right: 1rem;
+}
+
+.languageSelect {
+  select {
+    width: 160px;
+  }
+}
