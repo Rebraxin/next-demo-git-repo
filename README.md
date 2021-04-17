@@ -48,7 +48,7 @@ Le point d'entrée de l'application se trouve dans `src/pages/_app.js`. L'applic
 
 ### **Rendu SSR** :
 
-Au chargement de la page d'accueil, on peut tout de suite s'appercevoir de la notion de **SSR**, il suffit de faire un `CTRL + U` et l'on peut voir que toutes nos balises **HTML** avec son **contenu** à l'intérieur.
+Au chargement de la page d'accueil, on peut tout de suite s'appercevoir de la notion de **SSR**, il suffit de faire un `CTRL + U` et l'on peut voir que toutes nos balises **HTML** sont présentes avec leur **contenu**.
 
 Nom d'un repo coté front
 
