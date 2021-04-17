@@ -22,6 +22,14 @@ export const searchRepos = (searchText, language) => {
   return axiosGetCancellable(`../api/search?q=${query}&sort=stars&order=desc`)
 }
 
+export const getRepoById = (id) => {
+  return axios.get(`repositories/${id}`, axiosConfig)
+}
+
+export const getProfileById = (username) => {
+  return axios.get(`users/${username}`, axiosConfig)
+}
+
 export const isServer = () => {
   return typeof window === 'undefined'
 }

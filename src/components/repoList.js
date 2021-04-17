@@ -10,7 +10,7 @@ const RepoList = (props) => {
   }
 
   if (!repos || repos.length === 0) {
-    return <span className={classes.message}>No repositories found.</span>
+    return <span className={classes.message}>Aucun repo trouvé.</span>
   }
 
   return (

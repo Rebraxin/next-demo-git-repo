@@ -48,7 +48,7 @@ const Index = (props) => {
   )
 }
 
-export const getServerSideProps = async (ctx) => {
+export const getServerSideProps = async () => {
   const searchText = getRandomWord()
   const res = await searchRepos(searchText)
   return {
