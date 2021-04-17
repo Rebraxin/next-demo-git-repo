@@ -6,7 +6,11 @@ Cette app a pour objectif de montrer les possibilitées qu'offre **React** pour 
 
 ## Pour démarrer le Projet
 
-Premièrement, installer les dépendences :
+Premièrement, paramétrer ses variables d'environnements :
+
+Dupliquer fichier `.env.sample` puis le renomer `.env.local`, ensuite modifier les valeurs de chaque variable afin d'être connecté a l'API github
+
+Ensuite, installer les dépendences :
 
 ```bash
 npm install
@@ -56,7 +60,7 @@ Nom du même repo dans le code source
 
 ### **Requêtes Optimisées** :
 
-Suppression des requêtes devenu obsolète par une nouvelle requête sur le même endpoint. Ce qui pourrait être une source économique sur l'utilisation de moteur de recherches (Algolia) payant avec un plan au nombres de requêtes.
+Suppression des requêtes devenues obsolètes par une nouvelle requête sur le même endpoint. Ce qui pourrait être une source économique sur l'utilisation de moteur de recherches (Algolia) payant avec un plan au nombres de requêtes.
 
 ![Network XHR](/public/img/axios_xhr.png)
 
@@ -103,4 +107,82 @@ Un léger aperçu de ce que propose cette dépendances. On peut définir une con
     cardType: 'summary_large_image',
   }}
 />
+```
+
+Elle permet également d'optimiser les pages aux [résultats enrichis](https://search.google.com/test/rich-results?utm_campaign=devsite&utm_medium=jsonld&utm_source=article)
+
+```javascript
+<>
+  <h1>Product JSON-LD</h1>
+  <ProductJsonLd
+    productName="Executive Anvil"
+    images={[
+      'https://example.com/photos/1x1/photo.jpg',
+      'https://example.com/photos/4x3/photo.jpg',
+      'https://example.com/photos/16x9/photo.jpg',
+    ]}
+    description="Sleeker than ACME's Classic Anvil, the Executive Anvil is perfect for the business traveler looking for something to drop from a height."
+    brand="ACME"
+    color="blue"
+    manufacturerName="Gary Meehan"
+    manufacturerLogo="https://www.example.com/photos/logo.jpg"
+    material="steel"
+    slogan="For the business traveller looking for something to drop from a height."
+    disambiguatingDescription="Executive Anvil, perfect for the business traveller."
+    releaseDate="2014-02-05T08:00:00+08:00"
+    productionDate="2015-02-05T08:00:00+08:00"
+    purchaseDate="2015-02-06T08:00:00+08:00"
+    award="Best Executive Anvil Award."
+    reviews={[
+      {
+        author: {
+          type: 'Person',
+          name: 'Jim',
+        },
+        datePublished: '2017-01-06T03:37:40Z',
+        reviewBody:
+          'This is my favorite product yet! Thanks Nate for the example products and reviews.',
+        name: 'So awesome!!!',
+        reviewRating: {
+          bestRating: '5',
+          ratingValue: '5',
+          worstRating: '1',
+        },
+        publisher: {
+          type: 'Organization',
+          name: 'TwoVit',
+        },
+      },
+    ]}
+    aggregateRating={{
+      ratingValue: '4.4',
+      reviewCount: '89',
+    }}
+    offers={[
+      {
+        price: '119.99',
+        priceCurrency: 'USD',
+        priceValidUntil: '2020-11-05',
+        itemCondition: 'https://schema.org/UsedCondition',
+        availability: 'https://schema.org/InStock',
+        url: 'https://www.example.com/executive-anvil',
+        seller: {
+          name: 'Executive Objects',
+        },
+      },
+      {
+        price: '139.99',
+        priceCurrency: 'CAD',
+        priceValidUntil: '2020-09-05',
+        itemCondition: 'https://schema.org/UsedCondition',
+        availability: 'https://schema.org/InStock',
+        url: 'https://www.example.ca/executive-anvil',
+        seller: {
+          name: 'Executive Objects',
+        },
+      },
+    ]}
+    mpn="925872"
+  />
+</>
 ```
