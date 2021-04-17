@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import RepoList from '../components/repoList'
 import Search from '../components/search'
+import { NextSeo } from 'next-seo'
 import { searchRepos } from '../services/githubService'
 import { getRandomWord } from '../helpers/randowWord.helper'
 import classes from '../modules/index.module.scss'
@@ -36,6 +37,10 @@ const Index = (props) => {
 
   return (
     <div className={classes.container}>
+      <NextSeo
+        title="Page d'accueil SEO"
+        description="A short description goes here."
+      />
       <img className={classes.logo} src="/img/study.svg" alt="student" />
       <Search
         searchText={searchText}

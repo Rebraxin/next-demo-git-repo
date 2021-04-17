@@ -1,4 +1,5 @@
 import Navbar from '../components/navbar'
+import { DefaultSeo } from 'next-seo'
 import Head from 'next/head'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
@@ -27,9 +28,10 @@ Router.events.on('routeChangeError', () => {
 const MyApp = ({ Component, pageProps }) => {
   return (
     <div>
-      <Head>
-        <title>Github Repositories</title>
-      </Head>
+      <DefaultSeo
+        title="Titre SEO par default de l'application"
+        description="Une Simple Description."
+      />
       <Navbar />
       <div style={{ width: '100%', height: '0.5rem' }} id="nproPos" />
       <div className="page">

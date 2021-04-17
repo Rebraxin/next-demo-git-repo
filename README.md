@@ -1,34 +1,106 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Application permettant de chercher des reposotiries depuis l'API Github
 
-## Getting Started
+Ceci est une démo de [Next.js](https://nextjs.org/) projet "bootstrapped" avec [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-First, run the development server:
+Cette app a pour objectif de montrer les possibilitées qu'offre **React** pour faire face aux problématiques **SEO**/**Référencement**.
+
+## Pour démarrer le Projet
+
+Premièrement, installer les dépendences :
+
+```bash
+npm install
+# ou
+yarn
+```
+
+Ensuite, démarrer le serveur de developpement :
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir le navigateur et se rendre a l'adresse [http://localhost:3000](http://localhost:3000) pour avoir le rendu.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Le point d'entrée de l'application se trouve dans `src/pages/_app.js`. L'application se met à jour une fois les modifications sauvegardées.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Listes des dépendances présentes
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [Bulma](https://bulma.io/) petite surcouche css pour une intégration simple et rapide.
 
-## Learn More
+- [Axios](https://axios-http.com/) pour la gestion des requêtes sur l'API de github.
 
-To learn more about Next.js, take a look at the following resources:
+- [Sass](https://sass-lang.com/) utilisé pour la création de modules de styles en lien direct avec son composant.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Nprogress](https://ricostacruz.com/nprogress/) pour améliorer l'UX au chargement des composants.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [React-icons](https://react-icons.github.io/react-icons/) pour les différents icones rencontrés sur cette app.
 
-## Deploy on Vercel
+- [Next-Seo](https://github.com/garmeeh/next-seo) permet de gérer le titre des différentes pages du site, de façon dynamique et il est possible d'ajouter les meta pour Facebook, Twitter et bien plus...
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Points que je souhaitais mettre en avant
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### **Rendu SSR** :
+
+Au chargement de la page d'accueil, on peut tout de suite s'appercevoir de la notion de **SSR**, il suffit de faire un `CTRL + U` et l'on peut voir que toutes nos balises **HTML** avec son **contenu** à l'intérieur.
+
+Nom d'un repo coté front
+
+![Dans l'UI](/public/img/ssr_ui.png)
+
+Nom du même repo dans le code source
+
+![Dans le code source](/public/img/ssr_source.png)
+
+### **Requêtes Optimisées** :
+
+Suppression des requêtes devenu obsolète par une nouvelle requête sur le même endpoint. Ce qui pourrait être une source économique sur l'utilisation de moteur de recherches (Algolia) payant avec un plan au nombres de requêtes.
+
+![Network XHR](/public/img/axios_xhr.png)
+
+### **API Privée** :
+
+NexJS possède sa propre API ce qui permet de masquer les **tokens** ou **données senssible** des configs de requêtes dans les **Headers** souvent encodés en Base64 dans les Authorization. Après ce traitement, plus rien n'apparait.
+
+![Request Headers](/public/img/headers_req.png)
+
+### **Next SEO** :
+
+Un léger aperçu de ce que propose cette dépendances. On peut définir une config par défaut, puis l'étendre ou l'écraser sur les différentes pages du site.
+
+```javascript
+<NextSeo
+  title="Using More of Config"
+  description="This example uses more of the available config options."
+  canonical="https://www.canonical.ie/"
+  openGraph={{
+    url: 'https://www.url.ie/a',
+    title: 'Open Graph Title',
+    description: 'Open Graph Description',
+    images: [
+      {
+        url: 'https://www.example.ie/og-image-01.jpg',
+        width: 800,
+        height: 600,
+        alt: 'Og Image Alt',
+      },
+      {
+        url: 'https://www.example.ie/og-image-02.jpg',
+        width: 900,
+        height: 800,
+        alt: 'Og Image Alt Second',
+      },
+      { url: 'https://www.example.ie/og-image-03.jpg' },
+      { url: 'https://www.example.ie/og-image-04.jpg' },
+    ],
+    site_name: 'SiteName',
+  }}
+  twitter={{
+    handle: '@handle',
+    site: '@site',
+    cardType: 'summary_large_image',
+  }}
+/>
+```
