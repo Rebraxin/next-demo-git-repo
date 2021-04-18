@@ -12,7 +12,7 @@ const Search = (props) => {
     <div className={classes.search}>
       <TextInput
         className={classes.searchInput}
-        label="Repo Search"
+        label="Chercher un Repo"
         type="text"
         value={searchText}
         onChange={(value) => onSearchTextChange(value)}

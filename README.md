@@ -46,15 +46,19 @@ Le point d'entrée de l'application se trouve dans `src/pages/_app.js`. L'applic
 
 ## Points que je souhaitais mettre en avant
 
+### **Router** :
+
+Pas de router a configurer, NextJS créé ses propres routes en fonction de l'arborescence des fichiers/dossiers se trouvant dans **/pages/**
+
 ### **Rendu SSR** :
 
-Au chargement de la page d'accueil, on peut tout de suite s'appercevoir de la notion de **SSR**, il suffit de faire un `CTRL + U` et l'on peut voir que toutes nos balises **HTML** sont présentes avec leur **contenu**.
+Au chargement de la page d'accueil, on peut tout de suite s'appercevoir que la notion de **SSR** est respecté. Il suffit pour cela d'ajouter au navigateur Chrome l'extension [Quick Source Viewer](https://chrome.google.com/webstore/detail/quick-source-viewer/cfmcghennfbpmhemnnfjhkdmnbidpanb) et d'inspecter le code a l'aide de cette extension. Ceci permet un gain de performance et surtout un meilleur référencement par les _web crawlers_.
 
-Nom d'un repo coté front
+Profil d'un utilisateur trouvé depuis l'interface
 
 ![Dans l'UI](/public/img/ssr_ui.png)
 
-Nom du même repo dans le code source
+Balises **HTML** et **Datas** bien injectées dans le DOM
 
 ![Dans le code source](/public/img/ssr_source.png)
 
@@ -64,9 +68,9 @@ Suppression des requêtes devenues obsolètes par une nouvelle requête sur le m
 
 ![Network XHR](/public/img/axios_xhr.png)
 
-### **API Privée** :
+### **API Routes** :
 
-NexJS possède sa propre API ce qui permet de masquer les **tokens** ou **données senssible** des configs de requêtes dans les **Headers** souvent encodés en Base64 dans les Authorization. Après ce traitement, plus rien n'apparait.
+NexJS possède sa propre API ce qui permet de masquer les **tokens** ou **données senssible**. Plus rien n'est visible dans le _Header_ lors des requêtes.
 
 ![Request Headers](/public/img/headers_req.png)
 
