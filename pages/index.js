@@ -37,7 +37,6 @@ const Index = (props) => {
 
   return (
     <div className={classes.container}>
-      <h2>retest</h2>
       <NextSeo
         title="Page d'accueil SEO"
         description="A short description goes here."
