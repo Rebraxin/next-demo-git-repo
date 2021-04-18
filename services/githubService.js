@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { axiosGetCancellable } from '../helpers/axios.helper'
+import { axiosGetCancellable } from '@helpers/axios.helper'
 
 const axiosConfig = {
   baseURL: 'https://api.github.com/',

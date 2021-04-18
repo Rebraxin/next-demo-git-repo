@@ -1,5 +1,3 @@
-import React from 'react'
-
 const TextInput = (props) => {
   const { label, type, value, onChange, placeholder, className } = props
   const textInputClass = className ? `${className} field` : 'field'

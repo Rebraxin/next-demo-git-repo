@@ -1,4 +1,4 @@
-@import './colors.scss';
+@import './colors';
 
 $primary: $app-green;
 $link: $app-black;
@@ -9,6 +9,15 @@ html,
 body {
   padding: 0;
   margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .page {

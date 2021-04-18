@@ -1,6 +1,5 @@
-import React from 'react'
 import Link from 'next/link'
-import classes from '../../modules/buttonLink.module.scss'
+import classes from '@modules/ButtonLink.module.scss'
 
 const ButtonLink = (props) => {
   const { href, text, type = 'primary', target, external } = props

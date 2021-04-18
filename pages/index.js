@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import RepoList from '../components/repoList'
-import Search from '../components/search'
+import { useState } from 'react'
+import RepoList from '@components/RepoList'
+import Search from '@components/Search'
 import { NextSeo } from 'next-seo'
-import { searchRepos } from '../services/githubService'
-import { getRandomWord } from '../helpers/randowWord.helper'
-import classes from '../modules/index.module.scss'
+import { searchRepos } from '@services/githubService'
+import { getRandomWord } from '@helpers/randowWord.helper'
+import classes from '@modules/Index.module.scss'
 
 const Index = (props) => {
   const [searchText, setSearchText] = useState(props.searchText)
@@ -37,6 +37,7 @@ const Index = (props) => {
 
   return (
     <div className={classes.container}>
+      <h2>retest</h2>
       <NextSeo
         title="Page d'accueil SEO"
         description="A short description goes here."

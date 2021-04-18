@@ -1,8 +1,7 @@
-import React from 'react'
-import TextInput from './shared/textInput'
-import Select from './shared/select'
-import LANGUAGES from '../constants/languages.constant'
-import classes from '../modules/search.module.scss'
+import TextInput from '@components/shared/TextInput'
+import Select from '@components/shared/Select'
+import LANGUAGES from '@constants/languages.constant'
+import classes from '@modules/Search.module.scss'
 
 const Search = (props) => {
   const { language, searchText, onSearchTextChange, onLanguageChange } = props

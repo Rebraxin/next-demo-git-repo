@@ -1,10 +1,9 @@
-import Navbar from '../components/navbar'
+import Router from 'next/dist/next-server/lib/router/router'
+import Navbar from '@components/Navbar'
 import { DefaultSeo } from 'next-seo'
-import Head from 'next/head'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-import '../scss/style.scss'
-import Router from 'next/dist/next-server/lib/router/router'
+import '../styles/style.scss'
 
 NProgress.configure({
   parent: '#nproPos',

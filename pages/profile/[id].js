@@ -1,7 +1,6 @@
-import React from 'react'
-import { getProfileById } from '../../services/githubService'
-import classes from '../../modules/profile.module.scss'
-import ButtonLink from '../../components/shared/buttonLink'
+import { getProfileById } from '@services/githubService'
+import classes from '@modules/Profile.module.scss'
+import ButtonLink from '@components/shared/ButtonLink'
 
 const Profile = (props) => {
   const { profile } = props

@@ -1,6 +1,5 @@
-import React from 'react'
 import Link from 'next/link'
-import classes from '../modules/userAvatar.module.scss'
+import classes from '@modules/UserAvatar.module.scss'
 
 const UserAvatar = (props) => {
   const { user } = props

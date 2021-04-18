@@ -1,8 +1,7 @@
-import React from 'react'
-import { getRepoById } from '../../services/githubService'
-import classes from '../../modules/repo.module.scss'
-import ButtonLink from '../../components/shared/buttonLink'
-import UserAvatar from '../../components/userAvatar'
+import { getRepoById } from '@services/githubService'
+import classes from '@modules/Repo.module.scss'
+import ButtonLink from '@components/shared/ButtonLink'
+import UserAvatar from '@components/UserAvatar'
 
 const Repo = (props) => {
   const { repo } = props

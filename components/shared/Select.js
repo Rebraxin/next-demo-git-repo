@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Select = (props) => {
   const { label, value, onChange, options, className } = props
   const selectClass = className ? `${className} field` : 'field'

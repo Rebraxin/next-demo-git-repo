@@ -1,8 +1,7 @@
-import React from 'react'
 import Link from 'next/link'
 import { FaStar, FaCodeBranch } from 'react-icons/fa'
-import UserAvatar from './userAvatar'
-import classes from '../modules/repoListItem.module.scss'
+import UserAvatar from '@components/UserAvatar'
+import classes from '@modules/RepoListItem.module.scss'
 
 const RepoListItem = ({ repo }) => {
   const ellipsis = (txt) => {

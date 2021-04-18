@@ -1,6 +1,5 @@
-import React from 'react'
-import RepoListItem from './repoListItem'
-import classes from '../modules/repoList.module.scss'
+import RepoListItem from '@components/RepoListItem'
+import classes from '@modules/RepoList.module.scss'
 
 const RepoList = (props) => {
   const { repos, loading } = props
