@@ -1,0 +1,23 @@
+version: "3.8"
+
+networks:
+  proxy_bridge:
+    external: true
+
+services:
+  next-app:
+    build:
+      context: .
+      dockerfile: dockerfiles/next.dockerfile
+    restart: always
+    env_file:
+      - .env
+    networks:
+      proxy_bridge:
+    labels:
+      traefik.enable: true
+      traefik.http.routers.repo-finder-secure.entrypoints: ${ENTRYPOINT}
+      traefik.http.routers.repo-finder-secure.rule: Host(`${DOMAIN}`) || Host(`www.${DOMAIN}`)
+      traefik.http.services.repo-finder-secure.loadbalancer.server.port: 3000
+      traefik.http.routers.repo-finder-secure.middlewares: repo-finder-redirect@file
+      traefik.docker.network: proxy_bridge
